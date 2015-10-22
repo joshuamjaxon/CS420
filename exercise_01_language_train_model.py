@@ -34,7 +34,7 @@ tfidf_vect = TfidfVectorizer(analyzer='char', ngram_range=(1, 3))
 
 # TASK: Build a vectorizer / classifier pipeline using the previous analyzer
 # the pipeline instance should stored in a variable named clf
-clf = Pipeline([('vect', TfidfVectorizer()), ('clf', Perceptron())])
+clf = Pipeline([('vect', tfidf_vect), ('clf', Perceptron())])
 
 # TASK: Fit the pipeline on the training set
 clf = clf.fit(docs_train, y_train)
